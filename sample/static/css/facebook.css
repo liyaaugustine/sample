@@ -1,0 +1,23 @@
+.heading{
+    background-color:skyblue;
+}
+body{
+    background-image:linear-gradient(white,rgb(209, 209, 255));}
+
+  a{
+      padding-left: 15px;
+    text-decoration:none;
+    color:black;
+  }
+  a:hover{
+      background-color: cornflowerblue;
+      color: red;
+  }
+  
+ @media (max-width: 1199px)  {
+    #toplogin  {
+      background: #ffffff;
+      color:  #808080;
+    }
+     }  
+

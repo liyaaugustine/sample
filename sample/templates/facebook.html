@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebook</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/facebook.css' %}"> 
+</head>
+<body>
+    <div class="container-fluid "><!--creating header container-->
+        <div class="row heading">
+            <div class=" col-lg-6 col-md-12">
+               <img src="{% static 'Images/fblogo.png' %}" style="height:60px;" class="img-responsive"></div>
+
+                <div class="col-lg-6 col-md-12" id="toplogin">
+                    <form action="" class="form-inline">
+
+                        <div class="form-group  col-lg-4 col-md-12">
+                            <label for="email">Email</label>
+                            <input type="text"placeholder="Email/phone" name="email" id="email" class="form-control" style="margin-bottom:25px;">
+                        </div>
+                            <div class=" form-group col-lg-4 col-md-12">
+                            <label for="pswrd">Password</label>
+                            <input type="password" placeholder="password" name="pswrd" id="pswrd" class="form-control">
+                            Forgotten password?
+                            </div>
+                        <div class="col-lg-2 col-md-12">
+                            <button type="submit" class="btn btn-info btn-block" style="margin-top:4px;">Login</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div><!--end header container-->
+    <div class="container-fluid">
+        <div class="row">
+          
+            <div class="col-lg-6 col-md-12 d-none d-lg-block d-xl-block">
+                <h5 style="padding-left: 100px;">Facebook helps you connect and share with the people in your life.</h5><br>
+                <img src="{%static 'Images/loginfb.png' %}" width="450px" height="200px" style="padding-left: 100px;">
+            </div>
+
+   
+        <div class="col-lg-6 col-md-12" style="padding-top: 15px;"><!--creating account-->
+          
+               <center><h2>Create Account</h2><small>its free and always will be</small></center>
+           
+                <form class="form-inline">
+                   
+                    <div class="form-group col-lg-6 col-md-12">
+                        <input type="text "placeholder="Firstname" class="form-control" style= "width:100%" required></div>
+                    <div class="form-group col-lg-6 col-md-12">
+                        <input type="text" placeholder="Lastname" class="form-control" style="width:100%"></div> <br>
+                    <br><div class="form-group col-lg-12 col-md-12">
+                        <input type="text "placeholder="Mobile Number" class="form-control" style="width:100%"></div>
+                    <br><div class="form-group col-lg-12 col-md-12">
+                        <input type="text "placeholder="Email" class="form-control" style="width:100%"></div><br>
+                    <br><div class="form-group col-lg-12 col-md-12">
+                        <input type="password" placeholder="Password" class="form-control" style="width:100%" required></div>
+
+                        <br><h5 style="margin-left: 15px;"> Birthday</h5><br>
+
+                    <div class="form-group col-lg-12 col-md-12">
+                        <input type="date" class="form-control">Why do I need to provide my date of birth?
+                    </div>
+                    <div class="form-group col-lg-6 col-md-12">
+                        <input type="radio" name="gender">Female
+                        <input type="radio" name="gender">Male
+                    </div>
+                </form>
+               
+                    <p style="margin-left: 15px;"> By clicking Create an account you agree to Terms and confirm that you have read our Data policy,
+                        including our cookie use policy.You may recieve SMS message notification from facebook and you
+                        can opt out at any time.</p>
+                    </p>
+                    <button type="submit" class="btn btn-success" style="margin-left: 15px;">Create an account</button>
+                
+          </div></div>
+    </div><br><!--end container fluid-->
+
+<div class="container-fluid" style="background-color: white;"><!--creating footer nav-->
+    <div class="nav">
+        
+          
+                <b><a class="nav-link" href="#signup">Sign Up </a> </b>
+                <b><a class="nav-link" href="#login">Login </a> </b>
+                <b><a class="nav-link" href="#mobile">Mobile</a></b>
+                <b><a class="nav-link"  href="#findfriends">Find Friends</a></b>
+                <b><a class="nav-link" href="#pages">Pages</a></b>
+                <b><a class="nav-link" href="#help">Help</a></b>
+           
+    </div>
+</div><br>
+</body>
+</html>

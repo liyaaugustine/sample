@@ -1,0 +1,115 @@
+{%extends 'master.html'%}
+{%block content%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container-fluid">
+        {% if imagedata %}
+        <!--<img src="" if no default value means like this -->
+        {% for img in imagedata %}
+        <img  src="{{ img.profilepic.url }}" alt="profilepic here" width="30%" style="height:250px; border:3px solid;"
+        class="rounded-circle mx-auto d-block">
+        {% endfor %}
+        {% else %}
+        <img  src="{% static 'images/bluerosa.jpg' %}" alt="profilepic here" width="30%" style="height:250px; border:3px solid;"
+        class="rounded-circle mx-auto d-block">
+          {% endif %} 
+    </div> <!--end image section--> 
+
+    <table class="table table-striped">
+        <center><h1>Details</h1></center>
+            <!--<tr>
+                <th>Username</th>
+                <td>{{logdata.Username}}</td>
+            </tr>-->
+            <tr>
+               <th>Name</th>
+            <td>{{profile.firstname}} {{profile.lastname}}</td>
+            </tr>
+            <tr>
+               <th>Date</th>
+            <td>{{profile.date}}</td>
+            </tr>
+            <tr>
+                <th>Place</th>
+            <td>{{profile.place}}</td>
+            </tr>
+            <tr>
+               <th>Parentname</th>
+            <td>{{profile.parentname}}</td>
+            </tr>
+            <tr>
+                <th>Mobile number</th>
+             <td>{{profile.phone}}</td>
+             </tr>  
+                 
+        </table>
+        
+
+        <a href="deleteacc" class="btn btn-danger">Delete account</a>
+        
+            
+            <!--editing-->
+            <div class="modal fade" id="example">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4>Edit Details</h4>
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+                        <form method="POST" action="{%url 'upvprofile' %}" enctype="multipart/form-data">
+                            {% csrf_token %}
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="fname">Firstname</label>
+                                <input type="text" id="fname" name="fname" class="form-control" value="{{profile.firstname}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="lname">Lastname</label>
+                                <input type="text" id="lname" name="lname" class="form-control"value={{profile.lastname}}>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="text"  name="ndate" class="form-control" value="{{profile.date|date:'Y-m-d'}}" onfocus="(this.type='date')">
+                            </div>
+                            <div class="form-group">
+                                <label for="place">Place</label>
+                                <input type="text" id="place" name="place" class="form-control"value={{profile.place}}>
+                            </div>
+                            <div class="form-group">
+                                <label for="pname">Parentname</label>
+                                <input type="text" id="pname" name="pname" class="form-control"value={{profile.parentname}}>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Mobile Number</label>
+                                <input type="text" id="phone" name="phone" class="form-control"value={{profile.phone}}>
+                            </div>
+                            <div class="form-group">
+                                <label for="dppic">Profile</label>
+                                <input type="text" id="dppic" name="dppic" class="form-control"value="{{imagedata.profilepic}}" onfocus="(this.type='file')">
+                            </div>
+                            <div><br>
+                                <button type="button"  class="btn btn-info" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-secondary ml-5">Save Changes</button>
+                            </div>   
+                        </form><br>
+                    </div>
+                        </div>
+                    </div>
+                    {{newprofile}}
+                   
+                    
+        {% endblock %}  
+</body>
+</html>

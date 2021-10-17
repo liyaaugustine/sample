@@ -1,0 +1,47 @@
+{% extends 'parent.html'%}
+{% block content%}
+
+<form method="POST" action="child">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="exampleInputEmail1">Headline:</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" name="head" aria-describedby="emailHelp">
+      <small id="emailHelp" class="form-text text-danger">{{message}}</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Publication</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" name="publi">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Headline</th>
+        <th scope="col">Publication</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for item in artcle %}
+      <tr>
+          <td>
+            {{item.headline}}
+        </td>
+        <td>
+            {{item.publications}}
+        </td>
+        <td><a href="uparticle/{{item.id}}">Edit</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  
+ 
+  
+  {% endblock %}

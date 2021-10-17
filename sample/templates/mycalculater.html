@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mycalculater</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<style>
+    table{
+       background-color: rgb(86, 199, 214);
+        margin-top:30px;
+    }
+    input[type="text"]{
+        background-color: white;
+        width: 100%;
+        padding: 10px;
+    }
+    
+</style>
+
+</head>
+<body>
+    <center><table border="1px" cellpadding=8px;>
+     <th colspan="2" class="bg-light" style="font-size:45px;">Calculater</th>    
+    <tr>
+        <td><label for="first"> Enter 1st Number:</label></td>
+    <td><input type="number" id="first"></td>
+</tr>
+    <tr>
+        <td><label for="sec"> Enter 2nd Number:</label></td>
+    <td><input type="number" id="sec"></td>
+</tr>
+   <tr> 
+       <td colspan="2">
+        <button type="button"class="btn btn-secondary btn-lg" onclick="add()">+</button>
+        <button type="button" class="btn  btn-secondary btn-lg"onclick="sub()">-</button>
+        <button type="button" class="btn btn-secondary btn-lg"onclick="mul()">*</button>
+        <button type="button" class="btn  btn-secondary btn-lg"onclick="div()">/</button>
+        <button type="button" class="btn btn-success btn-lg"onclick="clr()">CLEAR</button></td>
+    
+</tr>
+   <tr>
+   
+    <td colspan="2"> <input type="text" id="rslt" disabled></td>
+</tr>
+</center></table>
+    <script>
+        function add(){
+            var a,b, c;
+            a=Number(document.getElementById('first').value)
+            b=Number(document.getElementById('sec').value)
+            c=a + b;
+            document.getElementById('rslt').value=c;
+        }
+        function sub(){
+            var a,b, c;
+            a=Number(document.getElementById('first').value)
+            b=Number(document.getElementById('sec').value)
+            c=a - b;
+            document.getElementById('rslt').value=c;
+        }
+        function mul(){
+            var a,b, c;
+            a=Number(document.getElementById('first').value)
+            b=Number(document.getElementById('sec').value)
+            c=a * b;
+            document.getElementById('rslt').value=c;
+        }
+        function div(){
+            var a,b, c;
+            a=Number(document.getElementById('first').value)
+            b=Number(document.getElementById('sec').value)
+            c=a / b;
+            document.getElementById('rslt').value=c;
+        }
+        
+        function clr(){
+            document.getElementById('rslt').value=""
+            document.getElementById('first').value=""
+            document.getElementById('sec').value=""
+        }
+    </script>
+
+</body>
+</html>

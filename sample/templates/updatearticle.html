@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+    <div class="mx-auto" id="updt" style="width: 500px;">
+            
+        <h4>Edit Details
+        <button type="button" class="close">
+            <span>&times;</span></h4>
+        </button>
+    
+        <form action="{%url 'uparticle' pub.id %}" method="POST">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="fname">Headline</label>
+                <input type="text" id="hline" name="hline" class="form-control" value="{{pub.headline}}">
+            </div>
+            <div class="form-group">
+                <label for="lname">Publication</label>
+                <input type="text" id="public" name="public" class="form-control" value="{{pub.publications}}">
+            </div>
+            <div>
+                <!--<button type="button"  class="btn btn-info">Close</button>-->
+                <button type="submit" class="btn btn-secondary ml-5">Save Changes</button>
+            </div>   
+            {{msg}}
+        </form>
+    </div> 
+</body>
+</html>
